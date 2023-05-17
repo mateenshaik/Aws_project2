@@ -3,14 +3,15 @@ pipeline{
 
     stages{
 
-        stage('Git checkout')
+        stage('Git checkout'){
 
          steps{
-            
+
             script{
 
                 git branch: 'main', url: 'https://github.com/mateenshaik/Aws_project2.git'
             }
         }
     }
+ }
 }

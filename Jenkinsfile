@@ -11,7 +11,7 @@ pipeline{
 
             script{
 
-                gitcheckout{
+                gitCheckout{
                  branch: "main"
                   url: "https://github.com/mateenshaik/Aws_project2.git"
             }

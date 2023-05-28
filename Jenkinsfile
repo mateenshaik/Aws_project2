@@ -1,3 +1,5 @@
+@Library{'Shared_library2.0'} _
+
 pipeline{
     agent any
 
@@ -9,7 +11,10 @@ pipeline{
 
             script{
 
-                git branch: 'main', url: 'https://github.com/mateenshaik/Aws_project2.git'
+                gitCheckout{
+                 branch: "main"
+                  url: "https://github.com/mateenshaik/Aws_project2.git"
+            }
             }
         }
     }

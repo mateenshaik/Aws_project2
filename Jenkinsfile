@@ -36,10 +36,10 @@ pipeline {
     }
 }
 
-def gitCheckout(Map stageParams) {
-    checkout([
-        $class: 'GitSCM',
-        branches: [[name: stageParams.branch]],
-        userRemoteConfigs: [[url: stageParams.url]]
-    ])
-}
+// def gitCheckout(Map stageParams) {
+//     checkout([
+//         $class: 'GitSCM',
+//         branches: [[name: stageParams.branch]],
+//         userRemoteConfigs: [[url: stageParams.url]]
+//     ])
+// }

@@ -29,7 +29,7 @@ pipeline {
         stage('Git checkout') {
             steps {
                 script {
-                    gitCheckout(branch: "master", url: "https://github.com/mateenshaik/Aws_project2.git")
+                    gitCheckout(branch: "main", url: "https://github.com/mateenshaik/Aws_project2.git")
                 }
             }
         }

@@ -37,7 +37,7 @@ pipeline {
             when { expression { pram.action == 'create'} }
             steps{
                 script{
-                    StaticCodeAnalysis()
+                     StaticCodeAnalysis()
                 }
             }
         }

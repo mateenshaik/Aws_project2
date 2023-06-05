@@ -5,13 +5,13 @@ pipeline {
 
     parameters{
 
-        choice(name: 'actio', choices: 'create\ndelete', description: 'choose create/Destroy')
+        choice(name: 'action', choices: 'create\ndelete', description: 'choose create/Destroy')
     }
 
     stages {
          
         stage('Git checkout') {
-             when { expression { pram.action == 'create'} }
+             when { expression { prams.action == 'create'} }
             steps {
                 script {
                     gitCheckout(branch: "main", url: "https://github.com/mateenshaik/Aws_project2.git")
@@ -19,7 +19,7 @@ pipeline {
             }
         }
         stage('Unit Test maven'){
-            when { expression { pram.action == 'create'} }
+            when { expression { prams.action == 'create'} }
             steps{
                 script{
                     mvnTest()
@@ -27,7 +27,7 @@ pipeline {
             }
         }
         stage('Integration test'){
-            when { expression { pram.action == 'create'} }
+            when { expression { prams.action == 'create'} }
             steps{
                 script{
                     mvnintegrationTest()
@@ -35,7 +35,7 @@ pipeline {
             }
         }
          stage('static code Analysis: sonarqube'){
-            when { expression { pram.action == 'create'} }
+            when { expression { prams.action == 'create'} }
             steps{
                 script{
                      StaticCodeAnalysis()

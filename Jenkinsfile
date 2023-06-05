@@ -9,8 +9,9 @@ pipeline {
     }
 
     stages {
-          when { expression { pram.action == 'create'} }
+         
         stage('Git checkout') {
+             when { expression { pram.action == 'create'} }
             steps {
                 script {
                     gitCheckout(branch: "main", url: "https://github.com/mateenshaik/Aws_project2.git")

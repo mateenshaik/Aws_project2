@@ -11,7 +11,7 @@ pipeline {
     stages {
          
         stage('Git checkout') {
-             when { expression { prams.action == 'create'} }
+             when { expression { parameters.action == 'create'} }
             steps {
                 script {
                     gitCheckout(branch: "main", url: "https://github.com/mateenshaik/Aws_project2.git")
@@ -19,7 +19,7 @@ pipeline {
             }
         }
         stage('Unit Test maven'){
-            when { expression { prams.action == 'create'} }
+            when { expression { parameters.action == 'create'} }
             steps{
                 script{
                     mvnTest()
@@ -27,7 +27,7 @@ pipeline {
             }
         }
         stage('Integration test'){
-            when { expression { prams.action == 'create'} }
+            when { expression { parameters.action == 'create'} }
             steps{
                 script{
                     mvnintegrationTest()
@@ -35,7 +35,7 @@ pipeline {
             }
         }
          stage('static code Analysis: sonarqube'){
-            when { expression { prams.action == 'create'} }
+            when { expression { parameters.action == 'create'} }
             steps{
                 script{
                      StaticCodeAnalysis()
